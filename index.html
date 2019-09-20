@@ -27,8 +27,25 @@
             </div>
           <input type="submit" id="submit" value="Submit">
         </form>
+        <script>
+            const $ = function(foo) {
+            	return document.getElementById(foo);
+        	}
+            const validate = function() {
+            	if ($('name').value.length < 2) {
+            		window.alert('ugyldigt navn');
+        			return false;
+        		}
+        		createCookie($('name').value, $('date').value, 0.0034222);
+        		return true;
+        	}
+        	const init = function() {
+        		console.log(document.cookie);
+        		$('knap').addEventListener('click', validate);
+        	}
+        	window.addEventListener('load', init);
+        </script>
 
-        
 
         </main>
         <footer>
