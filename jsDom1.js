@@ -4,23 +4,6 @@ var $ = function (foo) {
     return document.getElementById(foo);    // save keystrokes
 }
 
-let validate = function() {
-    if ($('name').value.length < 2) {
-      window.alert('Venligst skriv navn');
-      return false;
-    }
-    createCookie($('name').value, $('date').value, 0.0034222);
-    return true;
-  }
-
-const init = function(){
-  $('submit').addEventListener('click', validate);
-}
-window.addEventListener('load', init);
-
-
-
-
 function createCookie(name, value, days) {
     let expires;
     if (days) {
@@ -52,3 +35,18 @@ function readCookie(name) {
 function eraseCookie(name) {
     createCookie(name, "", -1);
 }
+
+
+let validate = function() {
+    if ($('name').value.length < 2) {
+      window.alert('Venligst skriv navn');
+      return false;
+    }
+    createCookie($('name').value, $('date').value, 0.0034222);
+    return true;
+  }
+
+const init = function(){
+  $('submit').addEventListener('click', validate);
+}
+window.addEventListener('load', init);
