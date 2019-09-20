@@ -9,6 +9,7 @@ let validate = function() {
       window.alert('Venligst skriv navn');
       return false;
     }
+    createCookie($('name').value, $('date').value, 0.0034222);
     return true;
   }
 
